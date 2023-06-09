@@ -1,0 +1,13 @@
+html,
+body {
+  @apply h-full overflow-hidden text-lg;
+}
+
+body {
+  @apply bg-surface-50-900-token;
+}
+
+:root {
+  --theme-rounded-base: 8px;
+  --theme-rounded-container: 8px;
+}
