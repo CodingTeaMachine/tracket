@@ -3,4 +3,4 @@
 	import LL from "$i18n/i18n-svelte";
 </script>
 
-<PageTitle>{$LL.navigation.home()}</PageTitle>
+<PageTitle>{$LL.navigation.customers()}</PageTitle>
