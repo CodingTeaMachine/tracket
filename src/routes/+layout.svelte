@@ -9,6 +9,7 @@
 	import {setLocale} from "$i18n/i18n-svelte";
 	
 	import type { LayoutData } from "./$types";
+	import PageTitle from "$lib/assets/components/UI/PageTitle.svelte";
 	
 	export let data: LayoutData;
 	setLocale(data.locale)
@@ -24,7 +25,8 @@
 	</svelte:fragment>
 	
 	<div class="container mx-auto p-10 h-full text-white">
-		<slot />
+		<PageTitle/>
+		<slot/>
 	</div>
 	
 	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>

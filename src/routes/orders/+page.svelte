@@ -1,6 +1,6 @@
 <script>
-	import PageTitle from "$lib/assets/components/UI/PageTitle.svelte";
 	import LL from "$i18n/i18n-svelte";
-</script>
+	import {pageTitle} from "$lib/stores/pageTitle";
 
-<PageTitle>{$LL.navigation.orders()}</PageTitle>
+	pageTitle.set($LL.navigation.orders())
+</script>
