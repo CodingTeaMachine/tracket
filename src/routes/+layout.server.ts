@@ -1,6 +1,6 @@
-import type { LayoutServerLoad } from "../../.svelte-kit/types/src/routes/$types";
+import type { LayoutServerLoad } from "./$types";
 
-export const load: LayoutServerLoad = ({ locals: { locale } }) => {
-	// pass locale information from "server-context" to "shared server + client context"
-	return { locale }
+export const load: LayoutServerLoad = async ({ locals: { locale, auth } }) => {
+	const { user } = await auth.validateUser();
+	return { locale, user }
 }

@@ -7,7 +7,7 @@
 		"vite": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "playwright test",
+		"test:ui": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
@@ -19,6 +19,7 @@
 		"@skeletonlabs/skeleton": "^1.7.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"@tailwindcss/forms": "^0.5.3",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.14",
@@ -26,6 +27,7 @@
 		"eslint": "^8.28.0",
 		"eslint-plugin-svelte": "^2.26.0",
 		"postcss": "^8.4.24",
+		"prisma": "^4.15.0",
 		"sass": "^1.63.2",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
@@ -36,5 +38,11 @@
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@lucia-auth/adapter-prisma": "^2.0.0",
+		"lucia-auth": "^1.8.0",
+		"lucide-svelte": "^0.241.0",
+		"zod": "^3.21.4"
+	}
 }

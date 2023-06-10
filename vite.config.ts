@@ -14,7 +14,8 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			$: resolve('./src'),
-			$i18n: resolve('./src/lib/i18n')
+			$i18n: resolve('./src/lib/i18n'),
+			$types: resolve('src/types')
 		},
 	},
 });

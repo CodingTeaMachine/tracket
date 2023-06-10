@@ -1,12 +1,16 @@
 import { initAcceptLanguageHeaderDetector } from "typesafe-i18n/detectors";
 import { detectLocale, i18n } from "$i18n/i18n-util";
-import type { Handle } from "@sveltejs/kit";
 import { loadAllLocales } from "$i18n/i18n-util.sync";
+import { sequence } from "@sveltejs/kit/hooks";
+import { auth } from '$lib/server/lucia';
+import { redirect } from "@sveltejs/kit";
+import { Redirect } from "$types/HTTP";
+import type { Handle } from "@sveltejs/kit";
 
 loadAllLocales()
 const L = i18n()
 
-export const handle = (async ({ event, resolve }) => {
+const handleDetectLocale: Handle = async ({ event, resolve }) => {
 	// TODO: get lang from cookie / user setting
 	const acceptLanguageHeaderDetector = initAcceptLanguageHeaderDetector(event.request);
 	const locale = detectLocale(acceptLanguageHeaderDetector);
@@ -14,4 +18,11 @@ export const handle = (async ({ event, resolve }) => {
 	event.locals.LL = L[locale];
 
 	return resolve(event, { transformPageChunk: ({ html }) => html.replace('%lang%', locale) });
-}) satisfies Handle;
+};
+
+const handleAuth: Handle = async ({ event, resolve }) => {
+	event.locals.auth = auth.handleRequest(event);
+	return resolve(event);
+}
+
+export const handle = sequence(handleDetectLocale, handleAuth)

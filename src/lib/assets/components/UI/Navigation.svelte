@@ -26,7 +26,7 @@
 	<ul class='flex flex-col gap-3'>
 		{#each links as link}
 			<li>
-				<a class='bg-primary-500 hover:!bg-primary-600' href={link.destination}>
+				<a class='capitalize bg-primary-500 hover:!bg-primary-600' href={link.destination}>
 					{link.label}
 				</a>
 			</li>

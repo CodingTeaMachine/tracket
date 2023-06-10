@@ -1,26 +1,28 @@
 <script lang="ts">
 	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
-
 	import '../app.scss';
-	
+
 	import {AppShell} from "@skeletonlabs/skeleton";
 	import Navigation from "$lib/assets/components/UI/Navigation.svelte";
 	import {setLocale} from "$i18n/i18n-svelte";
-	
-	import type { LayoutData } from "./$types";
+
+	import type {PageData} from "./$types";
 	import PageTitle from "$lib/assets/components/UI/PageTitle.svelte";
-	
-	export let data: LayoutData;
+	import UserBar from "$lib/assets/components/UI/UserBar.svelte";
+
+	export let data: PageData;
 	setLocale(data.locale)
+
+	$: userLoggedIn = !!data.user;
 </script>
 
 
 <AppShell slotSidebarLeft="w-64 bg-surface-500/10 text-white">
 	<svelte:fragment slot="sidebarLeft">
 		<div class="flex h-full flex-col justify-between">
-			<Navigation />
-<!--			<UserBar userLoggedIn={userLoggedIn} />-->
+			<Navigation/>
+			<UserBar {userLoggedIn}/>
 		</div>
 	</svelte:fragment>
 	
