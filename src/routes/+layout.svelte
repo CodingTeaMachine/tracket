@@ -15,6 +15,7 @@
 	setLocale(data.locale)
 
 	$: userLoggedIn = !!data.user;
+	$: initials = data.user?.username.slice(0, 2);
 </script>
 
 
@@ -22,7 +23,7 @@
 	<svelte:fragment slot="sidebarLeft">
 		<div class="flex h-full flex-col justify-between">
 			<Navigation/>
-			<UserBar {userLoggedIn}/>
+			<UserBar {userLoggedIn} {initials}/>
 		</div>
 	</svelte:fragment>
 	

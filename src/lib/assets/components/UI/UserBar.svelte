@@ -1,8 +1,9 @@
 <script lang="ts">
 	import QuestionMark from "$lib/assets/icons/QuestionMark.svelte";
-	import {LogIn, LogOut} from "lucide-svelte";
+	import { LogIn, LogOut } from "lucide-svelte";
 
 	export let userLoggedIn: boolean;
+	export let initials = '';
 </script>
 
 
@@ -15,10 +16,9 @@
 				<QuestionMark className="w-4"/>
 			</a>
 		{:else}
-			<a href="/profile">
-				<span>DM</span>
+			<a href="/">
+				<span class="uppercase">{initials}</span>
 			</a>
-		<!--	TODO: Display username-->
 		{/if}
 	</span>
 	{#if !userLoggedIn}
