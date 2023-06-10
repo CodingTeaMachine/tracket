@@ -12,7 +12,7 @@
 	>
 		{#if !userLoggedIn}
 			<a href="/login">
-				<QuestionMark class="w-4"/>
+				<QuestionMark className="w-4"/>
 			</a>
 		{:else}
 			<a href="/profile">
