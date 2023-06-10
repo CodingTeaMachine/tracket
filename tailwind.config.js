@@ -1,3 +1,14 @@
+import plugin from "tailwindcss/plugin";
+
+const capitalizeFirst = plugin(function ({ addUtilities }) {
+	const newUtilities = {
+		'.capitalize-first:first-letter': {
+			textTransform: 'uppercase',
+		},
+	}
+	addUtilities(newUtilities, ['responsive', 'hover'])
+})
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: 'class',
@@ -13,6 +24,8 @@ export default {
 		extend: {},
 	},
 	plugins: [
+		capitalizeFirst,
+		require('@tailwindcss/forms'),
 		// eslint-disable-next-line @typescript-eslint/no-var-requires
 		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
 	],

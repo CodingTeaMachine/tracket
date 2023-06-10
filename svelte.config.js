@@ -14,6 +14,8 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$i18n: 'src/lib/i18n',
+			$types: 'src/types',
+			$lib: 'src/lib',
 		},
 	}
 };
