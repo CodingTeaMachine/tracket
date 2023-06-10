@@ -3,8 +3,6 @@ import { detectLocale, i18n } from "$i18n/i18n-util";
 import { loadAllLocales } from "$i18n/i18n-util.sync";
 import { sequence } from "@sveltejs/kit/hooks";
 import { auth } from '$lib/server/lucia';
-import { redirect } from "@sveltejs/kit";
-import { Redirect } from "$types/HTTP";
 import type { Handle } from "@sveltejs/kit";
 
 loadAllLocales()
