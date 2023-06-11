@@ -39,6 +39,9 @@ const hu: Translation = {
 		password: {
 			dontMatch: 'a megadott jelszavak nem egyeznek'
 		}
+	},
+	footer: {
+		createdBy: 'készítette Dékány Márk',
 	}
 }
 

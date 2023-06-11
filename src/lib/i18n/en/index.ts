@@ -37,6 +37,9 @@ const en: BaseTranslation = {
 		password: {
 			dontMatch: 'the provided passwords don\'t match'
 		}
+	},
+	footer: {
+		createdBy: 'created by Dékány Márk',
 	}
 }
 

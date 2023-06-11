@@ -112,6 +112,12 @@ type RootTranslation = {
 			dontMatch: string
 		}
 	}
+	footer: {
+		/**
+		 * c​r​e​a​t​e​d​ ​b​y​ ​D​é​k​á​n​y​ ​M​á​r​k
+		 */
+		createdBy: string
+	}
 }
 
 export type TranslationFunctions = {
@@ -208,6 +214,12 @@ export type TranslationFunctions = {
 			 */
 			dontMatch: () => LocalizedString
 		}
+	}
+	footer: {
+		/**
+		 * created by Dékány Márk
+		 */
+		createdBy: () => LocalizedString
 	}
 }
 
