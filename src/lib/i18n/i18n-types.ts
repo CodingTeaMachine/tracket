@@ -69,6 +69,16 @@ type RootTranslation = {
 			 */
 			couldNotRegister: string
 		}
+		error: {
+			/**
+			 * N​o​t​ ​F​o​u​n​d
+			 */
+			'404': string
+			/**
+			 * e​r​r​o​r
+			 */
+			general: string
+		}
 	}
 	inputs: {
 		/**
@@ -175,6 +185,16 @@ export type TranslationFunctions = {
 			 * an error occurred during registration
 			 */
 			couldNotRegister: () => LocalizedString
+		}
+		error: {
+			/**
+			 * Not Found
+			 */
+			'404': () => LocalizedString
+			/**
+			 * error
+			 */
+			general: () => LocalizedString
 		}
 	}
 	inputs: {

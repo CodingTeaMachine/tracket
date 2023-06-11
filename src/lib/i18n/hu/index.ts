@@ -21,7 +21,11 @@ const hu: Translation = {
 			alreadyHaveAnAccount: 'már van fiókja',
 			loginNow: 'jelentkezzen be most',
 			couldNotRegister: 'hiba történt a regisztráció során'
-		}
+		},
+		error: {
+			general: 'hiba',
+			404: 'Nincs találat'
+		},
 	},
 	inputs: {
 		email: 'e-mail cím',

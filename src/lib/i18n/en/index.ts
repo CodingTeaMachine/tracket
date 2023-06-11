@@ -19,6 +19,10 @@ const en: BaseTranslation = {
 			alreadyHaveAnAccount: 'already have an account',
 			loginNow: 'login now',
 			couldNotRegister: 'an error occurred during registration'
+		},
+		error: {
+			general: 'error',
+			404: 'Not Found'
 		}
 	},
 	inputs: {
