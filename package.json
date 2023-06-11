@@ -1,6 +1,6 @@
 {
 	"name": "tracket",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "concurrently 'vite dev' typesafe-i18n",
