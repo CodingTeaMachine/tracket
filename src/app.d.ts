@@ -1,7 +1,7 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 
-import {Redirect as RedirectEnum} from "$types/HTTP";
+import {RedirectStatusCode as RedirectEnum} from "$types/HTTP";
 
 /// <reference types="@sveltejs/kit" />
 declare global {
