@@ -2,9 +2,10 @@ import type { ActionFailure, Actions } from '@sveltejs/kit';
 import { fail, redirect } from '@sveltejs/kit';
 import { validateEmail, validatePassword } from '$lib/validators';
 import { auth } from '$lib/server/lucia';
-import { Redirect } from "$types/HTTP";
+import { ClientStatusCode, RedirectStatusCode } from "$types/HTTP";
 import { get } from "svelte/store";
 import LL from "$i18n/i18n-svelte";
+import { Routes } from "$lib/routes";
 
 interface LoginError {
 	emailError: string,
@@ -28,7 +29,7 @@ export const actions = {
 		};
 
 		if (loginError.emailError || loginError.passwordError) {
-			return fail(400, {
+			return fail(ClientStatusCode.BAD_REQUEST, {
 				email,
 				errors: loginError,
 			});
@@ -40,9 +41,9 @@ export const actions = {
 			locals.auth.setSession(session);
 		} catch (error) {
 			loginError.loginError = get(LL).pages.login.couldNotLogIn();
-			return fail(400, { email, errors: loginError });
+			return fail(ClientStatusCode.BAD_REQUEST, { email, errors: loginError });
 		}
 
-		throw redirect(Redirect.FOUND, '/');
+		throw redirect(RedirectStatusCode.FOUND, Routes.HOME);
 	},
 } satisfies Actions;

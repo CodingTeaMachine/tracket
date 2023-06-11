@@ -5,6 +5,7 @@ const en: BaseTranslation = {
 		home: 'home',
 		orders: 'orders',
 		customers: 'customers',
+		profile: 'profile',
 	},
 	pages: {
 		login: {

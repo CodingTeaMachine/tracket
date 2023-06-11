@@ -5,6 +5,7 @@
 
 	import { AtSign, SquareAsterisk } from "lucide-svelte";
 	import FormInput from "$lib/assets/components/input/FormInput.svelte";
+	import { Routes } from "$lib/routes";
 
 	export let form: ActionData;
 
@@ -68,7 +69,7 @@
 				<div class="inline-block capitalize-first">
 					{$LL.pages.login.dontHaveAnAccount()}?
 				</div>
-				<a href="/register" class="inline-block text-primary-500 capitalize-first hover:underline">
+				<a href={Routes.REGISTER} class="inline-block text-primary-500 capitalize-first hover:underline">
 					{$LL.pages.login.registerOneNow()}
 				</a>
 			</div>

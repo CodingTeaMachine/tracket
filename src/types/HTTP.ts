@@ -1,4 +1,4 @@
-export enum Redirect {
+export enum RedirectStatusCode {
 	MULTIPLE_CHOICES = 300,
 	MOVED_PERMANENTLY,
 	FOUND,
@@ -8,4 +8,8 @@ export enum Redirect {
 	UNUSED,
 	TEMPORARY_REDIRECT,
 	PERMANENT_REDIRECT
+}
+
+export enum ClientStatusCode {
+	BAD_REQUEST = 400
 }

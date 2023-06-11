@@ -5,6 +5,8 @@ import type { ActionFailure, Actions } from '@sveltejs/kit';
 import { auth } from '$lib/server/lucia';
 import { get } from "svelte/store";
 import LL from "$i18n/i18n-svelte";
+import { ClientStatusCode, RedirectStatusCode } from "$types/HTTP";
+import { Routes } from "$lib/routes";
 
 interface RegisterError {
 	usernameError: string;
@@ -36,7 +38,7 @@ export const actions: Actions = {
 		};
 
 		if (registerError.usernameError || registerError.emailError || registerError.passwordError || registerError.rePasswordError) {
-			return fail(400, {
+			return fail(ClientStatusCode.BAD_REQUEST, {
 				username,
 				email,
 				errors: registerError,
@@ -58,13 +60,13 @@ export const actions: Actions = {
 		} catch (error) {
 			registerError.registrationError = get(LL).pages.register.couldNotRegister();
 
-			return fail(400, {
+			return fail(ClientStatusCode.BAD_REQUEST, {
 				username,
 				email,
 				errors: registerError
 			})
 		}
 
-		throw redirect(300, '/login');
+		throw redirect(RedirectStatusCode.FOUND, Routes.LOGIN);
 	},
 }

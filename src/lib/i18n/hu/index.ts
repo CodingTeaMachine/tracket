@@ -6,7 +6,8 @@ const hu: Translation = {
 	navigation: {
 		home: 'főoldal',
 		orders: 'rendelések',
-		customers: 'ügyfelek'
+		customers: 'ügyfelek',
+		profile: 'profil'
 	},
 	pages: {
 		login: {

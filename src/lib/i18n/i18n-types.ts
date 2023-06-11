@@ -27,6 +27,10 @@ type RootTranslation = {
 		 * c​u​s​t​o​m​e​r​s
 		 */
 		customers: string
+		/**
+		 * p​r​o​f​i​l​e
+		 */
+		profile: string
 	}
 	pages: {
 		login: {
@@ -124,6 +128,10 @@ export type TranslationFunctions = {
 		 * customers
 		 */
 		customers: () => LocalizedString
+		/**
+		 * profile
+		 */
+		profile: () => LocalizedString
 	}
 	pages: {
 		login: {

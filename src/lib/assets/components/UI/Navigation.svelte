@@ -1,5 +1,6 @@
 <script lang="ts">
 	import LL from "$i18n/i18n-svelte";
+	import { Routes } from "$lib/routes";
 
 	export let userLoggedIn = false;
 	
@@ -12,17 +13,17 @@
 	const links: Link[] = [
 		{
 			label: $LL.navigation.home(),
-			destination: '/',
+			destination: Routes.HOME,
 			protected: false
 		},
 		{
 			label: $LL.navigation.orders(),
-			destination: '/orders',
+			destination: Routes.ORDERS,
 			protected: true,
 		},
 		{
 			label: $LL.navigation.customers(),
-			destination: '/customers',
+			destination: Routes.CUSTOMERS,
 			protected: true,
 		}
 	]
