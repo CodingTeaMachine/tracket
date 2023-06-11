@@ -4,6 +4,8 @@
 
 	export let userLoggedIn: boolean;
 	export let initials = '';
+	
+	
 </script>
 
 

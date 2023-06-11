@@ -22,7 +22,7 @@
 <AppShell slotSidebarLeft="w-64 bg-surface-500/10 text-white">
 	<svelte:fragment slot="sidebarLeft">
 		<div class="flex h-full flex-col justify-between">
-			<Navigation/>
+			<Navigation {userLoggedIn}/>
 			<UserBar {userLoggedIn} {initials}/>
 		</div>
 	</svelte:fragment>
