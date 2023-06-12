@@ -9,13 +9,13 @@
 
 	export let form: ActionData;
 
-	$: usernameError = form?.errors.usernameError;
+	$: nameError = form?.errors.nameError;
 	$: emialError = form?.errors.emailError;
 	$: passswordError = form?.errors.passwordError;
 	$: rePassswordError = form?.errors.rePasswordError;
 
-	function resetUsernameError() {
-		if (usernameError) form.errors.usernameError = '';
+	function resetNameError() {
+		if (nameError) form.errors.nameError = '';
 	}
 
 	function resetEmailError() {
@@ -41,14 +41,14 @@
 		{/if}
 		<form method="POST" class="flex flex-col gap-3" use:enhance>
 			<FormInput
-				errorMode={usernameError}
-				errorMessage={usernameError}
-				label={$LL.inputs.username()}
-				name="username"
+				errorMode={nameError}
+				errorMessage={nameError}
+				label={$LL.inputs.name()}
+				name="name"
 				type="text"
 				placeholder="John Doe"
 				required
-				on:input={resetUsernameError}
+				on:input={resetNameError}
 			>
 				<svelte:fragment slot="prefix">
 					<User />
@@ -100,7 +100,7 @@
 				</svelte:fragment>
 			</FormInput>
 			
-			<button type="submit" class="btn variant-filled-primary capitalize-first">
+			<button type="submit" class="btn variant-filled-primary capitalize-first inline-block">
 				{$LL.pages.register.register()}
 			</button>
 			

@@ -86,9 +86,9 @@ type RootTranslation = {
 		 */
 		email: string
 		/**
-		 * u​s​e​r​n​a​m​e
+		 * n​a​m​e
 		 */
-		username: string
+		name: string
 		/**
 		 * p​a​s​s​w​o​r​d
 		 */
@@ -203,9 +203,9 @@ export type TranslationFunctions = {
 		 */
 		email: () => LocalizedString
 		/**
-		 * username
+		 * name
 		 */
-		username: () => LocalizedString
+		name: () => LocalizedString
 		/**
 		 * password
 		 */

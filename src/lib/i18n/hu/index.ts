@@ -29,7 +29,7 @@ const hu: Translation = {
 	},
 	inputs: {
 		email: 'e-mail cím',
-		username: 'felhasználónév',
+		name: 'név',
 		password: 'jelszó',
 		rePassword: 'jelszó újra'
 	},

@@ -27,7 +27,7 @@ const en: BaseTranslation = {
 	},
 	inputs: {
 		email: 'e-mail address',
-		username: 'username',
+		name: 'name',
 		password: 'password',
 		rePassword: 'password again'
 	},

@@ -21,7 +21,7 @@
 	setLocale(data.locale)
 
 	$: userLoggedIn = !!data.user;
-	$: initials = data.user?.username.slice(0, 2);
+	$: initials = data.user?.name.slice(0, 2);
 </script>
 
 

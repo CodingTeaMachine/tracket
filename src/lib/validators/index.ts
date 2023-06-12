@@ -46,21 +46,21 @@ export function validateEmail(email: string | null) {
 	}
 }
 
-export function validateUsername(username: string | null) {
+export function validateName(name: string | null) {
 	const locale = get(LL);
-	const usernameLocale = locale.inputs.email();
-	const MIN_USERNAME_LENGTH = 8;
+	const nameLocale = locale.inputs.email();
+	const MIN_NAME_LENGTH = 8;
 	try {
 		z
 			.string({
-				required_error: locale.validation.required({ field: usernameLocale }),
-				invalid_type_error: locale.validation.required({ field: usernameLocale })
+				required_error: locale.validation.required({ field: nameLocale }),
+				invalid_type_error: locale.validation.required({ field: nameLocale })
 			})
-			.min(MIN_USERNAME_LENGTH, locale.validation.tooShort({
-				field: usernameLocale,
-				length: MIN_USERNAME_LENGTH
+			.min(MIN_NAME_LENGTH, locale.validation.tooShort({
+				field: nameLocale,
+				length: MIN_NAME_LENGTH
 			}))
-			.parse(username);
+			.parse(name);
 
 		return '';
 	} catch (error) {

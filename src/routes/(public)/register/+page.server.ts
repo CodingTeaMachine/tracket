@@ -1,4 +1,4 @@
-import { validateEmail, validatePassword, validateRePassword, validateUsername } from '$lib/validators';
+import { validateEmail, validatePassword, validateRePassword, validateName } from '$lib/validators';
 import { fail, redirect } from '@sveltejs/kit';
 
 import type { ActionFailure, Actions } from '@sveltejs/kit';
@@ -9,7 +9,7 @@ import { ClientStatusCode, RedirectStatusCode } from "$types/HTTP";
 import { Routes } from "$lib/routes";
 
 interface RegisterError {
-	usernameError: string;
+	nameError: string;
 	emailError: string;
 	passwordError: string;
 	rePasswordError: string;
@@ -17,29 +17,29 @@ interface RegisterError {
 }
 
 type FailureResponse = {
-	username: FormDataEntryValue | null
-	email: FormDataEntryValue | null
-	errors: RegisterError
+	name: string | null
+	email: string | null
+	errors: string
 }
 
 export const actions: Actions = {
 	default: async ({ request }): Promise<ActionFailure<FailureResponse> | null> => {
-		const {username, email, password, rePassword} = Object.fromEntries(
+		const {name, email, password, rePassword} = Object.fromEntries(
 			await request.formData(),
 		) as Record<string, string>
 
 
 		const registerError: RegisterError = {
-			usernameError: validateUsername(username),
+			nameError: validateName(name),
 			emailError: validateEmail(email),
 			passwordError: validatePassword(password),
 			rePasswordError: validateRePassword(password, rePassword),
 			registrationError: ''
 		};
 
-		if (registerError.usernameError || registerError.emailError || registerError.passwordError || registerError.rePasswordError) {
+		if (registerError.nameError || registerError.emailError || registerError.passwordError || registerError.rePasswordError) {
 			return fail(ClientStatusCode.BAD_REQUEST, {
-				username,
+				name,
 				email,
 				errors: registerError,
 			});
@@ -53,7 +53,7 @@ export const actions: Actions = {
 					password
 				},
 				attributes: {
-					username,
+					name,
 					email,
 				}
 			})
@@ -61,7 +61,7 @@ export const actions: Actions = {
 			registerError.registrationError = get(LL).pages.register.couldNotRegister();
 
 			return fail(ClientStatusCode.BAD_REQUEST, {
-				username,
+				name,
 				email,
 				errors: registerError
 			})
