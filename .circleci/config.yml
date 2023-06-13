@@ -24,4 +24,9 @@ jobs:
           paths:
             - .
 
+workflows:
+  test:
+    jobs:
+      - build_and_test
+
 
