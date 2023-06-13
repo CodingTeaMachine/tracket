@@ -15,7 +15,10 @@ jobs:
                     pkg-manager: npm
             -   run:
                     command: npm run test:unit
-                    name: Run tests
+                    name: Run unit tests
+            -   run:
+                    command: npm run test:ui
+                    name: Run ui tests
             -   run:
                     command: npm run build
                     name: Build app
