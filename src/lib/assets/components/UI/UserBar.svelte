@@ -1,7 +1,7 @@
 <script lang="ts">
 	import QuestionMark from "$lib/assets/icons/QuestionMark.svelte";
 	import { LogIn, LogOut } from "lucide-svelte";
-	import { Routes } from "$lib/routes";
+	import { Routes } from "$types/routes";
 
 	export let userLoggedIn: boolean;
 	export let initials = '';

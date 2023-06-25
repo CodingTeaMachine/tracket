@@ -1,7 +1,7 @@
 import { redirect } from "@sveltejs/kit";
 import { RedirectStatusCode } from "$types/HTTP";
 import type { LayoutServerLoad } from './$types';
-import { Routes } from "$lib/routes";
+import { Routes } from "$types/routes";
 
 export const load: LayoutServerLoad = async ({ locals }) => {
 	const session = await locals.auth.validate();

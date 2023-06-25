@@ -6,7 +6,7 @@ import { auth } from '$lib/server/lucia';
 import { get } from "svelte/store";
 import LL from "$i18n/i18n-svelte";
 import { ClientStatusCode, RedirectStatusCode } from "$types/HTTP";
-import { Routes } from "$lib/routes";
+import { Routes } from "$types/routes";
 
 interface RegisterError {
 	nameError: string;

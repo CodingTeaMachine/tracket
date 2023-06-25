@@ -5,7 +5,7 @@
 	import { AtSign, SquareAsterisk, User } from 'lucide-svelte';
 	import FormInput from '$lib/assets/components/input/FormInput.svelte';
 	import LL from "$i18n/i18n-svelte";
-	import { Routes } from "$lib/routes";
+	import { Routes } from "$types/routes";
 
 	export let form: ActionData;
 

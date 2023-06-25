@@ -11,6 +11,8 @@ datasource db {
   relationMode = "prisma"
 }
 
+// AUTHENTICATION
+
 model AuthUser {
   id    String @id @unique
   name  String
@@ -43,4 +45,29 @@ model AuthKey {
 
   @@index([user_id])
   @@map("auth_key")
+}
+
+// CLIENT
+
+model Client {
+  id           Int       @id @unique
+  first_name   String    @db.VarChar(255)
+  last_name    String    @db.VarChar(255)
+  email        String    @db.VarChar(255)
+  phone_number String    @db.VarChar(15)
+  date_of_birt DateTime? @db.Date
+  gender       GENDER?   @default(NOT_SPECIFIED)
+  deleted      Boolean   @default(false)
+  gdpr         Boolean?
+
+  @@map("client")
+}
+
+// GENERAL ENUMS
+
+enum GENDER {
+  NOT_SPECIFIED
+  MALE
+  FEMALE
+  NON_BINARY
 }

@@ -5,7 +5,7 @@ import { auth } from '$lib/server/lucia';
 import { ClientStatusCode, RedirectStatusCode } from "$types/HTTP";
 import { get } from "svelte/store";
 import LL from "$i18n/i18n-svelte";
-import { Routes } from "$lib/routes";
+import { Routes } from "$types/routes";
 
 interface LoginError {
 	emailError: string,
